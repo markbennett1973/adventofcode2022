@@ -7,6 +7,7 @@ print "Part 2: " . moveRope($input, 10) . "\n";
 
 function moveRope(array $instructions, int $length): int
 {
+    $rope = [];
     for ($i = 0; $i < $length; $i++) {
         $rope[$i] = ['x' => 0, 'y' => 0];
     }
@@ -22,8 +23,6 @@ function moveRope(array $instructions, int $length): int
                     moveTail($rope, $index);
                 }
             }
-
-            // print "$instruction -> Head ".$rope[0]['x'].",".$rope[0]['y']." Tail ".$rope[1]['x'].','.$rope[1]['y']."\n";
 
             $visitedKey = $rope[$length-1]['x'].','.$rope[$length-1]['y'];
             $visited[$visitedKey] = true;
