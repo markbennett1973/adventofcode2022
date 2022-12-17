@@ -19,7 +19,7 @@ function findBestRoute(array $input): int
     list ($startRow, $startCol, $goalRow, $goalCol) = findGoals($map);
     $minSteps = PHP_INT_MAX;
     $startPoints = getStartPoints($map);
-    foreach ($startPoints as $index => $startPoint) {
+    foreach ($startPoints as $startPoint) {
         $steps = countSteps($map, $startPoint[0], $startPoint[1], $goalRow, $goalCol, $minSteps);
         $minSteps = min($steps, $minSteps);
     }
